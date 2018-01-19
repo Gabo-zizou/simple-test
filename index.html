@@ -1,0 +1,63 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ejercicio Jquery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div id="login-overlay" class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+
+              <h4 class="modal-title center" id="myModalLabel">Prueba</h4>
+
+              <select name="combo" id="combo" class="form-control">
+              	<option value="1">1 opcion</option>
+              	<option value="2">2 opcion</option>
+              	<option value="3">3 opcion</option>
+              	<option value="4">4 opcion</option>
+              </select>
+
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                  <div class="col-xs-12">
+                      <div class="well">
+                      <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                          <div class="form-group">
+                              <label for="username" class="control-label">Username</label>
+                              <div id="result"></div>
+                              <input type="text" class="form-control" id="variable" name="variable" value="" required="" title="" placeholder="variable aqui">
+                          </div>
+
+                          <button type="submit" class="btn btn-success btn-block">Login</button>
+                      </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script>
+	$('#combo').change(function(e){
+	    var selected = $(this).find('option:selected');
+	    alert(selected.val() + ' ' + selected.text());
+	    $('#result').text(selected.val());
+	    $('#variable').val(selected.val());
+	});
+  /*
+  $(document).ready(function(){
+      $('select[name=selector]').val();   
+  });
+  */
+</script>
+
+</body>
+</html> 
